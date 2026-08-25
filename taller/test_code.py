@@ -1,47 +1,62 @@
 """
-Realizar un algoritmo que transforme numeros romanos a numeros decimales
-
+Realizar un algoritmo que transforme numeros decimales a numeros romanos
 Consideraciones:
-1. Los símbolos se escriben de izquierda a derecha de MAYOR a MENOR valor
-2. Los números romanos representan solo enteros positivos
-3. De Mayor a menor: M=1000, D=500, C=100, L=50, X=10, V=5, I=1
-4. Si una letra está seguida por otra de igual o menor valor ENTONCES sus valores se suman. EJP: CX -> 100 + 10
-5. Si una letra está seguida por otra de mayor valor ENTONCES sus valores se restan. EJP: XC -> 100 - 10
+Sean A,B elementos del conjunto de Números Romanos
+a) Aumento de valor: Cuando una cifra A <= B se ubica a la derecha de B se suma: B+A
+b) Disminución de valor: Cuando una cira A <= B se ubica a la izquierda de B se resta: B-A
+c) Repetición: una cifra A puede repetirse hasta 3 veces de manera consecutiva
+d) contar hasta el 4000 abierto, por una cuestión de notación
 
-Algoritmo:
-1. Solicitar al usuario un número romano r
-2. Convertir r en una lista_romanos
-2.1 Convertir todos los elementos de lista_romanos en mayúsuclas
-3 Declarar un diccionario valores_romanos asociando cada letra al valor entero correspondiente
-4. Añadir a una lista_enteros los valores del diccionario asociados a cada letra en lista_romanos en orden 
-5.0 Si lista_enteros[i] > lista_enteros[i+1] 
-5.0.1 Entonces sumar lista_enteros[i] + lista_enteros[i+1]
-5.0.2 añadir el valor de la suma  5.0.1 a total
-5.1 Si lista_enteros[i] <= lista_enteros[i+1]
-5.1.1 Entonces restar lista_enteros[i+1] - lista_enteros[i]
-5.1.2 Entonces añadir el valor de la resta 5.1.1 a total 
-6.0 Imprimir valor total una vez terminado el ciclo
 
+Ejemplo Guía: 2943
+a) Ubicar el valor posicional del primer dígito (ie Millares, Centenas, Decenas,..) -> Millares
+b) Asignar valor correspondiente -> MM
+c) Ubicar el valor posicional del segundo dígito -> Centenas
+d) Asignar valor correspondiente -> CM
+e) Ubicar el valor posicional del tercer dígito -> Decenas
+f) Asignar el valor correspondiente -> XL
+...
+g) Ubicar el valor posicional del último dígito -> Unidades
+h) Asignar el valor correspondiente -> III
+i) Unir asignaciones 
+Romano: MMCMXLIII
+
+Notar:
+k = 1 -> Unidades
+k = 2 -> Decenas
+K = 3 -> Centenas
+k = 4 -> Millares 
 
 """
 
+def decimal_a_romano(numero):
+	"""Convierte un entero positivo menor que 4000 a numeracion romana."""
+	if numero <= 0 or numero >= 4000:
+		print("El numero debe estar entre 1 y 3999")
 
-r = 'LXIV'
-lista_romanos = list(r)
-lista_romanos = [letra.upper() for letra in lista_romanos]
-lista_enteros = []
-#Utilización de diccionari0 para hacer el recorrido más rápido
-valores = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
-total = 0
+	valores = (
+		(1000, "M"),
+		(900, "CM"),
+		(500, "D"),
+		(400, "CD"),
+		(100, "C"),
+		(90, "XC"),
+		(50, "L"),
+		(40, "XL"),
+		(10, "X"),
+		(9, "IX"),
+		(5, "V"),
+		(4, "IV"),
+		(1, "I"),
+	)
 
-#Recuperar valores del diccionario con comprensión de listas
-lista_enteros= [valores[letra] for letra in lista_romanos]
-#Detenerse en el penúltimo debido al uso del sucesor i+1
-for i,numero in enumerate(lista_enteros):
-    if i+1 < len(lista_enteros) and lista_enteros[i] < lista_enteros[i+1]:
-        total -= lista_enteros[i]
-    else:
-        total+= lista_enteros[i]
-print(total)
+	romano = ""
+	for valor, simbolo in valores:
+		cantidad, numero = divmod(numero, valor)
+		romano += simbolo * cantidad
+	return romano
 
+
+n = 2943
+print(decimal_a_romano(n))
 
