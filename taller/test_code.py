@@ -1,16 +1,18 @@
 """
-# 8. Realiza un algoritmo que valide si un email es valido
-### El texto debe tener un nombre de usuario sin caracteres especiales, el símbolo @, un dominio y una extensión como .com
-
+### Implementar la codificación Run-Length Encoding (RLE) expandida
+Convierte la cadena "AAABBCDDDD" en "A3B2C1D4"
 
 """
-import re
 
-email =  "allstars!$@gmail.com"
+cadena = 'AAABBCDDDD'
+contador = 1
+acumulador = []
 
-patron = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+for i in range(len(cadena)):
+    if i+1 < len(cadena) and cadena[i] == cadena[i+1]:
+        contador+=1
+    else:
+        acumulador.append(f'{cadena[i]}{contador}')
+        contador = 1
 
-if re.match(patron, email):
-    print('Correo Válido')
-else:
-    print('Correo No Válido')
+print("".join(acumulador))
