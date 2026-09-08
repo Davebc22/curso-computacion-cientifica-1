@@ -1,39 +1,15 @@
 """
-# 11. Genere el histograma que resulta de simular la suma del lanzamiento de 2 dados de 6 caras, genere esto para un N numero de repeticiones del experimento
-
-
+# 12. Implemente un algoritmo que como entrada reciba una lista de numeros, y un numero T objetivo. Como salida el algoritmo debe encontrar grupos de 3 numeros que sumen el numero T objetivo
 
 """
+lista_entrada = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+t = 20
 
-import matplotlib.pyplot as plt
-import random
+print(f'Elementos de la lista que al formarse en grupos de 3 y al sumarlos dan {t}: ')
+for i in range(len(lista_entrada)):
+    for j in range(i+1, len(lista_entrada)):
+        for k in range(j+1, len(lista_entrada)):
+            if lista_entrada[i]+lista_entrada[j]+lista_entrada[k] == t:
+                print(f'({lista_entrada[i]} + {lista_entrada[j]} + {lista_entrada[k]}) = {t}')
 
-# Tupla aleatoria simulando los dados
-n = 1000
-conteo = 0
-lista_lanzamiento = []
-lista_suma = []
 
-while conteo < n:
-
-    numero_aleatorio = (random.randint(1,6), random.randint(1,6))
-    suma = sum(numero_aleatorio)
-    lista_lanzamiento.append(numero_aleatorio)
-    lista_suma.append(suma)
-    conteo +=1
-
-print(lista_lanzamiento)
-print(lista_suma)
-
-# Histograma
-bins = [i - 0.5 for i in range(2, 14)]
-plt.hist(
-    lista_suma, bins=bins, rwidth=0.8, edgecolor="black"
-)
-plt.title(f"Distribución de la suma de dos dados lanzados {n} veces")
-plt.xlabel("Sumas de los dados")
-plt.ylabel("Frecuencia ")
-plt.xticks(range(2, 13))
-max_y = max([lista_suma.count(x) for x in lista_suma])
-plt.yticks(range(0, max_y + 20, 20))
-plt.show()
