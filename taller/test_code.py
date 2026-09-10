@@ -1,15 +1,44 @@
 """
-# 12. Implemente un algoritmo que como entrada reciba una lista de numeros, y un numero T objetivo. Como salida el algoritmo debe encontrar grupos de 3 numeros que sumen el numero T objetivo
-
+Parcial - Punto 3
 """
-lista_entrada = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
-t = 20
+import random
+import matplotlib.pyplot as plt
 
-print(f'Elementos de la lista que al formarse en grupos de 3 y al sumarlos dan {t}: ')
-for i in range(len(lista_entrada)):
-    for j in range(i+1, len(lista_entrada)):
-        for k in range(j+1, len(lista_entrada)):
-            if lista_entrada[i]+lista_entrada[j]+lista_entrada[k] == t:
-                print(f'({lista_entrada[i]} + {lista_entrada[j]} + {lista_entrada[k]}) = {t}')
+simulaciones = 10000
+asientos_finales_100 = []
 
+for simulacion in range(simulaciones):
+    #Condción Inicial
+    asientos_libres = list(range(1, 101))
+    asientos_ocupados = []
 
+    #Pasajero 1
+    distraido = random.randint(1,100)
+    asientos_ocupados = [distraido]
+    asientos_libres.remove(distraido)
+
+    # Segundo Escenario: Pasajeros del 2 al 100
+    for pasajero in range(2,101) :
+        if pasajero in asientos_libres:
+            asientos_ocupados.append(pasajero)
+            asientos_libres.remove(pasajero)
+        else:
+            asiento_azar = random.choice(asientos_libres)
+            asientos_ocupados.append(asiento_azar)
+            asientos_libres.remove(asiento_azar)
+
+    #Registro de posiciones dle pasajero 100
+    pasajero_100 = asientos_ocupados[-1]
+    asientos_finales_100.append(pasajero_100)
+
+# PUNTO 1:
+exitos = asientos_finales_100.count(100)
+probabilidad = exitos / simulaciones
+print(f"Probabilidad estimada de que el pasajero 100 se siente en su sitio: {probabilidad*100}%")
+
+# PUNTO 2:
+plt.hist(asientos_finales_100,bins=range(1,102), edgecolor ="black", align="left", color="purple",)
+plt.title("Distribución de Frecuencia del asiento del pasajero 100")
+plt.xlabel("Número de Asiento en el que se sentó")
+plt.ylabel("Frecuencia - Número de Simulaciones")
+plt.show()
