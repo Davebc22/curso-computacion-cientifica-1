@@ -53,6 +53,9 @@ class Carta:
         else: 
             return id_self < id_otra
 
+        def __gt__(self, otra):
+            return otra < self
+
 class Baraja:
     def __init__(self):
         self.baraja = []
@@ -82,6 +85,16 @@ baraja.barajar()
 print("### BARAJANDO ###")
 print(f'\n{baraja}\n')
 
-baraja.ordenar
+baraja.ordenar()
 print("### ORGANIZANDO ###")
 print(f'\n{baraja}\n')
+
+
+print("\n### PRUEBAS DE COMPARACIÓN DE CARTAS ###")
+c1 = Carta("Treboles", "A")
+c2 = Carta("Corazones", "K")
+c3 = Carta("Treboles", "8")
+c4 = Carta("Treboles", "A")
+print(f"{c1} == {c4} :", c1 == c4)  
+print(f"{c1} < {c2}  :", c1 < c2)   
+print(f"{c1} > {c2}  :", c1 > c2)   
