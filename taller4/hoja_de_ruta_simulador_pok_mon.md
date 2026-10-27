@@ -10,7 +10,7 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 **Objetivo:** Construir la base de conocimiento estática del juego.
 *Correspondencia en PDF: Sección 2 (Mecánica de Tipos) y Sección 3 (Pool de Pokémon).*
 
-- [ ] **1.1. Matriz de Efectividad:** Crear la estructura (diccionario o matriz) que calcule los multiplicadores (0.0, 0.5, 1.0, 2.0, 4.0) cruzando tipos de ataque vs. tipos del defensor.
+- [x] **1.1. Matriz de Efectividad:** Crear la estructura (diccionario o matriz) que calcule los multiplicadores (0.0, 0.5, 1.0, 2.0, 4.0) cruzando tipos de ataque vs. tipos del defensor.
 - [ ] **1.2. Catálogo de Movimientos:** Definir un pool de movimientos con sus atributos (`nombre`, `tipo`, `categoria` [Físico/Especial], `potencia`, `precision`, `pp_max`).
 - [ ] **1.3. Pool de 20 Pokémon:** Crear un archivo de datos (JSON o diccionarios de Python) con 20 Pokémon asegurando que se cubran los 18 tipos elementales oficiales.
 - [ ] **1.4. Atributos Completos:** Asegurar que cada Pokémon tenga `id`, `nombre`, `tipo_1`, `tipo_2`, estadísticas base completas ($HP, Atk, Def, Sp.Atk, Sp.Def, Speed$) y una lista de 4 movimientos.
@@ -56,4 +56,4 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 
 # Arbol del Proyecto
 
-![alt text](image.png)
+![alt text](arbol.png)
