@@ -11,9 +11,9 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 *Correspondencia en PDF: Sección 2 (Mecánica de Tipos) y Sección 3 (Pool de Pokémon).*
 
 - [x] **1.1. Matriz de Efectividad:** Crear la estructura (diccionario o matriz) que calcule los multiplicadores (0.0, 0.5, 1.0, 2.0, 4.0) cruzando tipos de ataque vs. tipos del defensor.
-- [ ] **1.2. Catálogo de Movimientos:** Definir un pool de movimientos con sus atributos (`nombre`, `tipo`, `categoria` [Físico/Especial], `potencia`, `precision`, `pp_max`).
-- [ ] **1.3. Pool de 20 Pokémon:** Crear un archivo de datos (JSON o diccionarios de Python) con 20 Pokémon asegurando que se cubran los 18 tipos elementales oficiales.
-- [ ] **1.4. Atributos Completos:** Asegurar que cada Pokémon tenga `id`, `nombre`, `tipo_1`, `tipo_2`, estadísticas base completas ($HP, Atk, Def, Sp.Atk, Sp.Def, Speed$) y una lista de 4 movimientos.
+- [x] **1.2. Catálogo de Movimientos:** Definir un pool de movimientos con sus atributos (`nombre`, `tipo`, `categoria` [Físico/Especial], `potencia`, `precision`, `pp_max`).
+- [x] **1.3. Pool de 20 Pokémon:** Crear un archivo de datos (JSON o diccionarios de Python) con 20 Pokémon asegurando que se cubran los 18 tipos elementales oficiales.
+- [x] **1.4. Atributos Completos:** Asegurar que cada Pokémon tenga `id`, `nombre`, `tipo_1`, `tipo_2`, estadísticas base completas ($HP, Atk, Def, Sp.Atk, Sp.Def, Speed$) y una lista de 4 movimientos.
 
 ---
 
@@ -21,8 +21,8 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 **Objetivo:** Implementar la abstracción, encapsulamiento y estructura de clases.
 *Correspondencia en PDF: Sección 4 (Clases propuestas) y Evaluación (Diseño POO 35%).*
 
-- [ ] **2.1. Clase `Movimiento`:** Implementar atributos y métodos `consumir_pp()` y `es_valido()`.
-- [ ] **2.2. Clase `Pokemon`:** Implementar atributos (calculando $HP$ máximo) y métodos `recibir_daño(cantidad)`, `esta_debilitado()` y `obtener_estadistica()`.
+- [x] **2.1. Clase `Movimiento`:** Implementar atributos y métodos `consumir_pp()` y `es_valido()`.
+- [x] **2.2. Clase `Pokemon`:** Implementar atributos (calculando $HP$ máximo) y métodos `recibir_daño(cantidad)`, `esta_debilitado()` y `obtener_estadistica()`.
 - [ ] **2.3. Clase `Entrenador` (Adaptada 1v1):** Implementar con un solo `pokemon_activo` (eliminando la lista de equipo y el método de cambio de Pokémon).
 - [ ] **2.4. Clase `Batalla` (Esqueleto):** Crear la estructura principal con `jugador1`, `jugador2` y los métodos `iniciar_combate()`, `procesar_turno()`, `resolver_prioridad()`, `calcular_daño()`, y `verificar_ganador()`.
 
