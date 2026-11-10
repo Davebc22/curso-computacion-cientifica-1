@@ -23,8 +23,8 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 
 - [x] **2.1. Clase `Movimiento`:** Implementar atributos y métodos `consumir_pp()` y `es_valido()`.
 - [x] **2.2. Clase `Pokemon`:** Implementar atributos (calculando $HP$ máximo) y métodos `recibir_daño(cantidad)`, `esta_debilitado()` y `obtener_estadistica()`.
-- [ ] **2.3. Clase `Entrenador` (Adaptada 1v1):** Implementar con un solo `pokemon_activo` (eliminando la lista de equipo y el método de cambio de Pokémon).
-- [ ] **2.4. Clase `Batalla` (Esqueleto):** Crear la estructura principal con `jugador1`, `jugador2` y los métodos `iniciar_combate()`, `procesar_turno()`, `resolver_prioridad()`, `calcular_daño()`, y `verificar_ganador()`.
+- [x] **2.3. Clase `Entrenador` (Adaptada 1v1):** Implementar con un solo `pokemon_activo` (eliminando la lista de equipo y el método de cambio de Pokémon).
+- [] **2.4. Clase `Batalla` (Esqueleto):** Crear la estructura principal con `jugador1`, `jugador2` y los métodos `iniciar_combate()`, `procesar_turno()`, `resolver_prioridad()`, `calcular_daño()`, y `verificar_ganador()`.
 
 ---
 

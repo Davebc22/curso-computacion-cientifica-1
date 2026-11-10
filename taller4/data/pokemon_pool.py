@@ -243,4 +243,7 @@ POOL_POKEMON = {
     )
 }
 
+"""
+Prueba:
 print(POOL_POKEMON["Gengar"])
+"""
