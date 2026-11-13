@@ -22,7 +22,7 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 *Correspondencia en PDF: Sección 4 (Clases propuestas) y Evaluación (Diseño POO 35%).*
 
 - [x] **2.1. Clase `Movimiento`:** Implementar atributos y métodos `consumir_pp()` y `es_valido()`.
-- [x] **2.2. Clase `Pokemon`:** Implementar atributos (calculando $HP$ máximo) y métodos `recibir_daño(cantidad)`, `esta_debilitado()` y `obtener_estadistica()`.
+- [x] **2.2. Clase `Pokemon`:** Implementar atributos (con $HP$ máximo definido en los datos e inicializando el $HP$ actual a ese valor) y métodos `recibir_daño(cantidad)`, `esta_debilitado()`, `atacar(movimiento, objetivo)` y `obtener_estadistica()`.
 - [x] **2.3. Clase `Entrenador` (Adaptada 1v1):** Implementar con un solo `pokemon_activo` (eliminando la lista de equipo y el método de cambio de Pokémon).
 - [x] **2.4. Clase `Batalla` (Esqueleto):** Crear la estructura principal con `jugador1`, `jugador2` y los métodos `iniciar_combate()`, `procesar_turno()`, `resolver_prioridad()`, `calcular_daño()`, y `verificar_ganador()`.
 
@@ -32,10 +32,10 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 **Objetivo:** Desarrollar el corazón de la simulación y las reglas físicas.
 *Correspondencia en PDF: Sección 5 (Mecánica de Combate y Simulación Estocástica).*
 
-- [ ] **3.1. Prioridad de Turno:** Implementar lógica donde ataca primero el de mayor `velocidad`. Si hay empate, resolver con probabilidad $p = 0.5$.
-- [ ] **3.2. Simulación Estocástica (Precisión):** Implementar $r \sim U(1, 100) \le \text{Precisión}$. Si falla, restar PP pero no calcular daño.
-- [ ] **3.3. Simulación Estocástica (Crítico):** Implementar la probabilidad de $6.25\%$ ($1/16$) para asestar un golpe crítico (multiplicador 1.5).
-- [ ] **3.4. Fórmula de Daño Oficial:** Integrar todo asumiendo Nivel = 50:
+- [x] **3.1. Prioridad de Turno:** Implementar lógica donde ataca primero el de mayor `velocidad`. Si hay empate, resolver con probabilidad $p = 0.5$.
+- [x] **3.2. Simulación Estocástica (Precisión):** Implementar $r \sim U(1, 100) \le \text{Precisión}$. Si falla, restar PP pero no calcular daño.
+- [x] **3.3. Simulación Estocástica (Crítico):** Implementar la probabilidad de $6.25\%$ ($1/16$) para asestar un golpe crítico (multiplicador 1.5).
+- [x] **3.4. Fórmula de Daño Oficial:** Integrar todo asumiendo Nivel = 50:
   - Validar Ataque Físico vs. Defensa Física O Ataque Especial vs. Defensa Especial.
   - Calcular STAB (1.5 si tipo de ataque coincide con tipo del atacante).
   - Calcular Efectividad (incluyendo el producto de dos tipos si el defensor es dual).
