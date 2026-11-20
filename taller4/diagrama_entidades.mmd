@@ -1,0 +1,55 @@
+classDiagram
+    direction LR
+
+    class Movimiento {
+        +nombre
+        +tipo
+        +categoria
+        +potencia
+        +precision
+        +pp_max
+        +pp_actual
+        +consumir_pp()
+        +es_valido()
+    }
+
+    class Pokemon {
+        +id
+        +nombre
+        +tipo_1
+        +tipo_2
+        +hp_max
+        +hp_actual
+        +ataque
+        +defensa
+        +at_especial
+        +def_especial
+        +velocidad
+        +movimientos
+        +recibir_daño(cantidad)
+        +atacar(movimiento, objetivo)
+        +esta_debilitado()
+        +obtener_estadistica(nombre_stat)
+    }
+
+    class Entrenador {
+        +nombre
+        +pokemon_activo
+        +tiene_pokemon_disponible()
+    }
+
+    class Batalla {
+        +jugador1
+        +jugador2
+        +turno_actual
+        +iniciar_combate()
+        +procesar_turno(movimiento_jugador1, movimiento_jugador2)
+        +resolver_prioridad()
+        +calcular_daño(atacante, defensor, movimiento)
+        +verificar_ganador()
+    }
+
+    Pokemon "1" *-- "4" Movimiento : tiene
+    Entrenador "1" --> "1" Pokemon : pokemon_activo
+    Batalla "1" --> "1" Entrenador : jugador1
+    Batalla "1" --> "1" Entrenador : jugador2

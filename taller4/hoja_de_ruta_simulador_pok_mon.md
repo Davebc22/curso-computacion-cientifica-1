@@ -48,9 +48,9 @@ Esta hoja de ruta está diseñada para cumplir al 100% con los criterios de eval
 **Objetivo:** Unir todas las piezas en un flujo jugable y robusto.
 *Correspondencia en PDF: Sección 5 (Interfaz CLI) y Evaluación (Interfaz CLI 10%).*
 
-- [ ] **4.1. HUD de Batalla:** Imprimir al inicio del turno los nombres, $HP$ actual/máximo y los Puntos de Poder (PP) de los movimientos.
-- [ ] **4.2. Fase de Comandos:** Solicitar al Jugador 1 y luego al Jugador 2 que elijan un ataque (del 1 al 4). *Nota: No se solicitará opción de cambio.*
-- [ ] **4.3. Higienización de Inputs:** Manejar errores (ej. si el usuario ingresa letras en lugar de números) para que el programa no colapse.
+- [x] **4.1. HUD de Batalla:** Imprimir al inicio del turno los nombres, $HP$ actual/máximo y los Puntos de Poder (PP) de los movimientos.
+- [x] **4.2. Fase de Comandos:** Solicitar al Jugador 1 y luego al Jugador 2 que elijan un ataque (del 1 al 4). *Nota: No se solicitará opción de cambio.*
+- [x] **4.3. Higienización de Inputs:** Manejar errores (ej. si el usuario ingresa letras en lugar de números) para que el programa no colapse.
 - [ ] **4.4. Casos de Prueba (Validación):** Correr los combates de prueba (ej. Jolteon vs Gyarados, Snorlax vs Charizard) para confirmar que las matemáticas coinciden con los casos del PDF.
 
 
